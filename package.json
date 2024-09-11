@@ -1,5 +1,5 @@
 {
-    "name": "aic-rail-studio",
+    "name": "issue28388",
     "version": "6.6.0",
     "license": "https://themeforest.net/licenses/standard",
     "private": true,
@@ -15,22 +15,7 @@
         "postbuild": "for i in $(find dist/rail-studio/ -type f -print); do brotli $i; done",
         "test": "ng test",
         "lint": "ng lint",
-        "e2e": "ng e2e",
-        "update-version": "node ./azure-build/update-version.js",
-        "reduce-assets-size": "node ./azure-build/reduce-assets-size.js",
-        "build-web-component": "ng build web-component --configuration production --output-hashing none && node build-web-component.js",
-        "prepare-workspace": "node ./azure-build/prepare-workspace.js",
-        "prepare-deploy": "node ./azure-build/prepare-deploy.js",
-        "build-libs": "npm run prepare-workspace build && node ./azure-build/build-libraries.js",
-        "create-lib": "npm run prepare-workspace build && node ./azure-build/create-library.js",
-        "crypt-config": "node ./src/assets/__VERSION__/script/crypt-config.js",
-        "transloco-combine": "rimraf -rf ./src/assets/__VERSION__/i18n/output/*.json && ngx-i18n-combine -i ./projects/**/assets/other/i18n/ ./package/**/assets/__VERSION__/other/i18n/ ./src/assets/__VERSION__/i18n/ -o ./src/assets/__VERSION__/i18n/output/**.json",
-        "go": "npm run prepare-workspace serve npm run transloco-combine && node --max_old_space_size=10144 ./node_modules/@angular/cli/bin/ng serve --port 4202 --host localhost",
-        "go1": "npm run transloco-combine && node --max_old_space_size=10144 ./node_modules/@angular/cli/bin/ng serve --port 4202 --host localhost",
-        "project-build": "node --max_old_space_size=10144 ./node_modules/@angular/cli/bin/ng build --configuration production --base-href http://10.4.6.175:4210/",
-        "project-build-tfs": "node --max_old_space_size=3072 ./node_modules/@angular/cli/bin/ng build --configuration production --base-href http://10.4.6.175:4210/",
-        "azure-build": "npm run build-libs i && npm run transloco-combine && npm run project-build",
-        "azure-build-tfs": "npm run build-libs i && npm run transloco-combine && npm run project-build-tfs"
+        "e2e": "ng e2e"
     },
     "dependencies": {
         "@angular-devkit/architect": "^0.1802.3",
