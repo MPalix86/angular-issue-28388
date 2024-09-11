@@ -1,0 +1,89 @@
+{
+    "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+    "index": "/index.html",
+    "navigationRequestStrategy": "freshness",
+    "assetGroups": [
+        {
+            "name": "app",
+            "installMode": "lazy",
+            "resources": {
+                "files": [
+                    "/favicon.ico",
+                    "/index.html",
+                    "/manifest.webmanifest",
+                    "/*.css",
+                    "/*.js",
+                    "/assets/__VERSION__/**"
+                ]
+            }
+        },
+        {
+            "name": "assets",
+            "installMode": "lazy",
+            "updateMode": "lazy",
+            "resources": {
+                "files": [
+                    "/assets/__VERSION__/**",
+                    "/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
+                ]
+            }
+        }
+    ],
+    "dataGroups": [
+        {
+            "version": 2,
+            "name": "api-parameters",
+            "urls": ["/api/Chart/**"],
+            "cacheConfig": {
+                "strategy": "freshness",
+                "maxSize": 100,
+                "maxAge": "3d",
+                "timeout": "0u"
+            }
+        },
+        {
+            "version": 2,
+            "name": "api-tsight",
+            "urls": ["/api/Tsight/**"],
+            "cacheConfig": {
+                "strategy": "freshness",
+                "maxSize": 100,
+                "maxAge": "3d",
+                "timeout": "0u"
+            }
+        },
+        {
+            "version": 2,
+            "name": "api-rail-profile",
+            "urls": ["/api/RailProfile/**"],
+            "cacheConfig": {
+                "strategy": "freshness",
+                "maxSize": 100,
+                "maxAge": "3d",
+                "timeout": "0u"
+            }
+        },
+        {
+            "version": 2,
+            "name": "api-image-raw",
+            "urls": ["/api/ImageRaw/**"],
+            "cacheConfig": {
+                "strategy": "freshness",
+                "maxSize": 100,
+                "maxAge": "3d",
+                "timeout": "0u"
+            }
+        },
+        {
+            "version": 2,
+            "name": "api-general",
+            "urls": ["/api/**"],
+            "cacheConfig": {
+                "strategy": "freshness",
+                "maxSize": 100,
+                "maxAge": "3d",
+                "timeout": "4s"
+            }
+        }
+    ]
+}
