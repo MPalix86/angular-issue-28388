@@ -2,7 +2,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component'; // Root component
-import { MyLibComponent } from 'my-lib';
 
 @NgModule({
     declarations: [
@@ -12,7 +11,6 @@ import { MyLibComponent } from 'my-lib';
     imports: [
         // Import other Angular modules or custom modules her
 
-        MyLibComponent,
         BrowserModule,
     ],
     providers: [
