@@ -11,6 +11,7 @@ import { MyLibComponent } from 'my-lib';
     ],
     imports: [
         // Import other Angular modules or custom modules her
+
         MyLibComponent,
         BrowserModule,
     ],
